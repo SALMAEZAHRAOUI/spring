@@ -68,6 +68,21 @@ public class CompteService {
             return 1;
         }
     }
+    public int ouvrir ( String rib){
+      Compte compte = findByRib(rib);
+        if (compte == null) {
+            return -1;
+        } else if (!compte.isOuvert()) {
+            return -2;
+        } else if (compte.getSolde()<0 ) {
+            return -3;
+        }
+        else {
+            compteDao.save(compte);
+        return 1;}
+    }
 
 
+    public void update(Compte compte) {
+    }
 }

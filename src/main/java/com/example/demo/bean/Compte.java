@@ -46,4 +46,5 @@ public class Compte {
     public void setOuvert(boolean ouvert) {
         this.ouvert = ouvert;
     }
+
 }

@@ -7,14 +7,12 @@ import java.util.List;
 
 @Entity
 public class TypeOperation {
-    @Id
-    @GeneratedValue
-    private long id;
-    private String libelle;
-    private String code;
-    @OneToMany
-    private List<Operation> operations;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String code;
+    private String libelle;
 
     public String getCode() {
         return code;
@@ -22,14 +20,6 @@ public class TypeOperation {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getLibelle() {
@@ -40,4 +30,11 @@ public class TypeOperation {
         this.libelle = libelle;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }
